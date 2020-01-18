@@ -5,9 +5,12 @@ var mongoURI = 'mongodb://localhost/review';
 mongoose.Promise = global.Promise;
 
 // Connect Mongoose to our local MongoDB via URI specified above
-// var db = 
+var db = mongoose.connect(mongoURI)
+  .then(() => {
+    console.log('connected to mongoDB');
+  })
 
 // define the model
-var Todo 
+var Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = Todo;
